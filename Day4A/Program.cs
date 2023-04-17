@@ -11,35 +11,36 @@ namespace Day4A
     {
         static void Main(string[] args)
         {
-            // Create an ArrayList of strings
-            ArrayList list = new ArrayList();
+            // Create a dictionary of string keys and int values
+            Dictionary<string, int> dict = new Dictionary<string, int>();
 
-            // Add some items to the list
-            list.Add("apple");
-            Console.WriteLine("Apple added");
-            list.Add("banana");
+            // Add some items to the dictionary
+            dict.Add("apple", 1);
+            Console.WriteLine("apple added");
+            dict.Add("banana", 2);
             Console.WriteLine("banana added");
-            list.Add("cherry");
+            dict.Add("cherry", 3);
             Console.WriteLine("cherry added");
-            list.Add("date");
-            Console.WriteLine("date added");
+            dict.Add("date", 4);
+            Console.WriteLine("dates added");
 
-            // Read (Retrieve) an item from the list
-            Console.WriteLine("The second item in the list is: " + list[1]);
+            // Read (Retrieve) an item from the dictionary
+            Console.WriteLine("The value for 'banana' is: " + dict["banana"]);
 
-            // Update an item in the list
-            list[2] = "orange";
-            Console.WriteLine("The third item in the list is now: " + list[2]);
+            // Update an item in the dictionary
+            dict["cherry"] = 5;
+            Console.WriteLine("The value for 'cherry' is now: " + dict["cherry"]);
 
-            // Delete an item from the list
-            list.RemoveAt(0);
-            Console.WriteLine("The first item in the list has been removed.");
+            // Delete an item from the dictionary
+            dict.Remove("apple");
+            Console.WriteLine("The item 'apple' has been removed.");
 
-            // Print all items in the list
-            Console.WriteLine("Here are all the items in the list:");
-            foreach (string item in list)
+            
+            // Print all items in the dictionary
+            Console.WriteLine("Here are all the items in the dictionary:");
+            foreach (KeyValuePair<string, int> item in dict)
             {
-                Console.WriteLine(item);
+                Console.WriteLine(item.Key + ": " + item.Value);
             }
         }
     }
